@@ -1,11 +1,7 @@
-backend/node_modules
-backend/.env
+nestjs/node_modules
+nestjs/.env
 frontend/.env
 frontend/node_modules
 frontend/dist
 frontend/build
-frontend/public/build
-frontend/public/build
-frontend/public/build
-frontend/public/build
 frontend/public/build
