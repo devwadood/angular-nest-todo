@@ -1,5 +1,6 @@
-nestjs/node_modules
-nestjs/.env
+nest/node_modules
+nest/.env
+nest/dist
 frontend/.env
 frontend/node_modules
 frontend/dist
