@@ -1,8 +1,11 @@
-nest/node_modules
-nest/.env
-nest/dist
-frontend/.env
-frontend/node_modules
-frontend/dist
-frontend/build
-frontend/public/build
+# Backend
+/backend/node_modules/
+/backend/.env
+/backend/dist/
+
+# Frontend
+/frontend/node_modules/
+/frontend/.env
+/frontend/dist/
+/frontend/build/
+/frontend/public/build/
