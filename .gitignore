@@ -1,11 +1,12 @@
 # Backend
-/backend/node_modules/
-/backend/.env
-/backend/dist/
+/nest/node_modules/
+/nest/.env
+/nest/dist/
+/nest/build/
 
 # Frontend
-/frontend/node_modules/
-/frontend/.env
-/frontend/dist/
-/frontend/build/
-/frontend/public/build/
+/angular/node_modules/
+/angular/.env
+/angular/dist/
+/angular/build/
+/angular/public/build/
