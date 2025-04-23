@@ -6,6 +6,7 @@ import {
   Param,
   Post,
   Put,
+  Req,
   UseGuards,
 } from '@nestjs/common';
 import { TodoService } from './todo.service';
@@ -18,7 +19,7 @@ import {
   ApiResponse,
   ApiBearerAuth,
 } from '@nestjs/swagger';
-
+import { AuthService } from '../auth/auth.service';
 @ApiTags('todos')
 @ApiBearerAuth()
 @Controller('todos')
@@ -29,15 +30,15 @@ export class TodoController {
   @Post()
   @ApiOperation({ summary: 'Create a new todo' })
   @ApiResponse({ status: 201, description: 'Todo successfully created' })
-  create(@Body() createTodoDto: CreateTodoDto) {
-    return this.todoService.create(createTodoDto);
+  create(@Body() createTodoDto: CreateTodoDto, @Req() req: any) {
+    return this.todoService.create(createTodoDto, req?.user?.userId);
   }
 
   @Get()
   @ApiOperation({ summary: 'Get all todos' })
   @ApiResponse({ status: 200, description: 'Return all todos' })
-  findAll() {
-    return this.todoService.findAll();
+  findAll(@Req() req: any) {
+    return this.todoService.findAll(req?.user?.userId);
   }
 
   @Get(':id')

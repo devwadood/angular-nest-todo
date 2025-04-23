@@ -12,14 +12,26 @@ export class TodoService {
     private todoRepository: Repository<Todo>,
   ) {}
 
-  async create(createTodoDto: CreateTodoDto) {
+  async create(createTodoDto: CreateTodoDto, userId: number) {
     console.log(createTodoDto, 'createTodoDto');
-    const todo = this.todoRepository.create(createTodoDto);
+    const todo = this.todoRepository.create({
+      ...createTodoDto,
+      user: {
+        id: userId,
+      },
+    });
     return await this.todoRepository.save(todo);
   }
 
-  async findAll() {
-    return await this.todoRepository.find();
+  async findAll(userId: number) {
+    return await this.todoRepository.find({
+      relations: ['user'],
+      where: {
+        user: {
+          id: userId,
+        },
+      },
+    });
   }
 
   async findOne(id: number) {

@@ -5,8 +5,8 @@
 /nest/build/
 
 # Frontend
-/angular/node_modules/
-/angular/.env
-/angular/dist/
-/angular/build/
-/angular/public/build/
+/frontend-app/node_modules/
+/frontend-app/.env
+/frontend-app/dist/
+/frontend-app/build/
+/frontend-app/public/build/
