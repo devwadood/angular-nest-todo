@@ -1,59 +1,101 @@
-# FrontendApp
+# Angular-Nest Todo Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
+This project is a full-stack Todo application built with Angular for the frontend and NestJS for the backend. It demonstrates a simple yet effective way to manage tasks with user authentication and authorization.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- **User Authentication:** Secure login and registration using JWT.
+- **Task Management:** Create, view, and manage todos.
+- **User-Specific Todos:** Each user can only view and manage their own todos.
+- **Responsive Design:** Built with Angular Material for a modern UI.
+- **API Documentation:** Swagger documentation for backend APIs.
+- **Upcoming Features:** Edit and delete functionality for todos in the frontend.
 
-```bash
-ng serve
-```
+## Prerequisites
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Node.js**: Ensure you have Node.js installed (version 14 or later recommended).
+- **Angular CLI**: Install Angular CLI globally using `npm install -g @angular/cli`.
+- **NestJS CLI**: Install NestJS CLI globally using `npm install -g @nestjs/cli`.
+- **PostgreSQL**: Ensure you have a PostgreSQL database running.
 
-## Code scaffolding
+## Getting Started
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Backend Setup (NestJS)
 
-```bash
-ng generate component component-name
-```
+1. **Navigate to the backend directory:**
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+   ```bash
+   cd nest
+   ```
 
-```bash
-ng generate --help
-```
+2. **Install dependencies:**
 
-## Building
+   ```bash
+   npm install
+   ```
 
-To build the project run:
+3. **Configure the database:**
 
-```bash
-ng build
-```
+   - Create a `.env` file in the `nest` directory with the following content:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+     ```plaintext
+     DATABASE_HOST=localhost
+     DATABASE_PORT=5432
+     DATABASE_USER=your_db_user
+     DATABASE_PASSWORD=your_db_password
+     DATABASE_NAME=your_db_name
+     JWT_SECRET=your_jwt_secret
+     ```
 
-## Running unit tests
+4. **Run database migrations:**
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+   ```bash
+   npm run typeorm migration:run
+   ```
 
-```bash
-ng test
-```
+5. **Start the backend server:**
 
-## Running end-to-end tests
+   ```bash
+   npm run start:dev
+   ```
 
-For end-to-end (e2e) testing, run:
+   The backend server will start on `http://localhost:3000`.
 
-```bash
-ng e2e
-```
+### Frontend Setup (Angular)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+1. **Navigate to the frontend directory:**
 
-## Additional Resources
+   ```bash
+   cd frontend-app
+   ```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the frontend server:**
+
+   ```bash
+   npm start
+   ```
+
+   The frontend application will start on `http://localhost:4200`.
+
+## API Documentation
+
+- Access the Swagger API documentation at `http://localhost:3000/api`.
+
+## Development
+
+- **Backend:** Use `npm run start:dev` for hot-reloading during development.
+- **Frontend:** Use `ng serve` for live-reloading during development.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License.
