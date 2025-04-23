@@ -10,3 +10,5 @@
 /frontend-app/dist/
 /frontend-app/build/
 /frontend-app/public/build/
+/frontend-app/.angular/
+/frontend-app/.vscode/
