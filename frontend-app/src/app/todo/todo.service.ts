@@ -22,12 +22,7 @@ export class TodoService {
   }
 
   create(createTodoDto: CreateTodoDto): Observable<Todo> {
-    const token = localStorage.getItem('access_token');
-    return this.http.post<Todo>(`${this.apiUrl}/todos`, createTodoDto, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    }).pipe(
+    return this.http.post<Todo>(`${this.apiUrl}/todos`, createTodoDto).pipe(
       tap(() => {
         this.refreshNeeded$.next();
       })
@@ -35,38 +30,18 @@ export class TodoService {
   }
 
   findAll(): Observable<Todo[]> {
-    const token = localStorage.getItem('access_token');
-    return this.http.get<Todo[]>(`${this.apiUrl}/todos`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    });
+    return this.http.get<Todo[]>(`${this.apiUrl}/todos`);
   }
 
   findOne(id: number) {
-    const token = localStorage.getItem('access_token');
-    return this.http.get<any>(`${this.apiUrl}/todos/${id}`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    });
+    return this.http.get<any>(`${this.apiUrl}/todos/${id}`);
   }
 
   update(id: number, updateTodoDto: UpdateTodoDto) {
-    const token = localStorage.getItem('access_token');
-    return this.http.put<any>(`${this.apiUrl}/todos/${id}`, updateTodoDto, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    });
+    return this.http.put<any>(`${this.apiUrl}/todos/${id}`, updateTodoDto);
   }
 
   remove(id: number) {
-    const token = localStorage.getItem('access_token');
-    return this.http.delete<any>(`${this.apiUrl}/todos/${id}`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    });
+    return this.http.delete<any>(`${this.apiUrl}/todos/${id}`);
   }
 }

@@ -58,4 +58,7 @@ export class LoginComponent {
     }
     return '';
   }
+  goToRegister() {
+    this.router.navigate(['/auth/register']);
+  }
 }

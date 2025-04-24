@@ -75,4 +75,8 @@ export class RegisterComponent {
     }
     return '';
   }
+
+  goToLogin() {
+    this.router.navigate(['/auth/login']);
+  }
 }

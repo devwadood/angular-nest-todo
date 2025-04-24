@@ -30,7 +30,6 @@ export class AuthService {
     const user = await this.userRepository.findOne({
       where: { email: loginDto.email },
     });
-    console.log(user);
     if (!user) {
       throw new UnauthorizedException('Invalid credentials');
     }
@@ -39,7 +38,6 @@ export class AuthService {
       loginDto.password,
       user.password,
     );
-    console.log(isPasswordValid, 'isPasswordValid');
     if (!isPasswordValid) {
       throw new UnauthorizedException('Invalid credentials');
     }

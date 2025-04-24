@@ -16,15 +16,19 @@ import { RouterModule } from '@angular/router';
 import { TodoService } from './todo.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from '../auth/auth.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TodoEditDialogComponent } from './todo-edit-dialog/todo-edit-dialog.component';
 
 @NgModule({
   declarations: [
     TodoFormComponent,
     TodoListComponent,
     TodoPageComponent,
+    TodoEditDialogComponent
   ],
   imports: [
     CommonModule,
+    MatDialogModule,
     MatCardModule,
     MatInputModule,
     MatButtonModule,

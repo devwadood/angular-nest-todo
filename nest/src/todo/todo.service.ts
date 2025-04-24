@@ -26,6 +26,9 @@ export class TodoService {
   async findAll(userId: number) {
     return await this.todoRepository.find({
       relations: ['user'],
+      order: {
+        id: 'ASC',
+      },
       where: {
         user: {
           id: userId,
