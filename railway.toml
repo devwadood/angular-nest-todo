@@ -1,0 +1,5 @@
+[build]
+command = "cd angular-app && npm install && npm run build"
+
+[start]
+command = "cd angular-app && npx serve -s dist/frontend-app -l 8080"
